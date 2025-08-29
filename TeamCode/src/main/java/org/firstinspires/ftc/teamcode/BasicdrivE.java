@@ -75,7 +75,6 @@ public class BasicdrivE extends LinearOpMode {
     private DcMotor right_front_drive = null;
     private DcMotor right_back_drive = null;
 
-    private Servo PancakeLifter;
     @Override
     public void runOpMode() {
 
@@ -85,7 +84,6 @@ public class BasicdrivE extends LinearOpMode {
         left_back_drive = hardwareMap.get(DcMotor.class, "left_back_drive");
         right_front_drive = hardwareMap.get(DcMotor.class, "right_front_drive");
         right_back_drive = hardwareMap.get(DcMotor.class, "right_back_drive");
-        PancakeLifter = hardwareMap.get(Servo.class, "Pancake_Lifter");
         // ########################################################################################
         // !!!            IMPORTANT Drive Information. Test your motor directions.            !!!!!
         // ########################################################################################
@@ -145,8 +143,7 @@ public class BasicdrivE extends LinearOpMode {
             rightBackPower  = gamepad1.b ? 1.0 : 0.0;  // B gamepad
 
              */
-            if (gamepad1.a) PancakeLifter.setPosition(0);
-            else if (gamepad1.b) PancakeLifter.setPosition(1);
+
             // Send calculated power to wheels
             left_front_drive.setPower(leftFrontPower);
             right_front_drive.setPower(rightFrontPower);
